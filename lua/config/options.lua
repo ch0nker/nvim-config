@@ -1,7 +1,5 @@
 local fn, uv = vim.fn, vim.uv
-
 local ini_path = fn.stdpath("config") .. "/options.ini"
-
 
 local function section_to_value(str)
     local value = getfenv(1)
@@ -11,6 +9,16 @@ local function section_to_value(str)
     end
 
     return value
+end
+
+local function keymap_cmd(key, cmd)
+    vim.keymap.set("n", 
+        key,
+        function()
+            vim.api.nvim_command(cmd)
+        end,
+        { noremap = true }
+    )
 end
 
 vim.options_keymap = {}
@@ -58,4 +66,6 @@ if uv.fs_stat(ini_path) then
 	end
 end
 
-vim.keymap.set("n", vim.options_keymap.quit or "q", function() vim.api.nvim_command("q") end, { noremap = true })
+keymap_cmd(vim.options_keymap.quit or "q", "q")
+keymap_cmd(vim.options_keymap.save or "<C-s>", "w")
+keymap_cmd(vim.options_keymap.save_quit or "<C-x>", "wq")
