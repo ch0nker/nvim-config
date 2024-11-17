@@ -18,7 +18,7 @@ opt.rtp:prepend(lazypath)
 
 -- Install plugins
 require("lazy").setup({
-    dev = { path = g.projects_directory, patterns = { "chonker" } },
+    dev = { path = g.projects_directory, patterns = { "local-dev" } },
     spec = { import = "plugins" },
     check = { enabled = true }
 })
