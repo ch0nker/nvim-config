@@ -67,5 +67,8 @@ if uv.fs_stat(ini_path) then
 end
 
 keymap_cmd(vim.options_keymap.quit or "q", "q")
+keymap_cmd(vim.options_keymap.quit_all or "<C-q>", "qa")
 keymap_cmd(vim.options_keymap.save or "<C-s>", "w")
+keymap_cmd(vim.options_keymapp.save_all or "<C-S>", "wa")
 keymap_cmd(vim.options_keymap.save_quit or "<C-x>", "wq")
+keymap_cmd(vim.options_keymap.save_quit_all or "<C-X>", "xa")
