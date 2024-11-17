@@ -21,7 +21,7 @@ return {
                 { "<leader>" .. keymap.find .. keymap.todo, "<cmd>TodoTelescope<cr>", desc = "Search for TODOs" },
                 { "<leader>" .. keymap.git, group = "Git" },
                 { "<leader>" .. keymap.git .. keymap.branch, "<cmd>Neogit branch<cr>", desc = "Branch" },
-                { "<leader>" .. keymap.git .. keymap.commit, "<cmd>Neogit commit<cr>" end, desc = "Commit" },
+                { "<leader>" .. keymap.git .. keymap.commit, "<cmd>Neogit commit<cr>", desc = "Commit" },
                 { "<leader>" .. keymap.git .. keymap.diff, "<cmd>Neogit diff<cr>", desc = "Different View" },
                 { "<leader>" .. keymap.git .. keymap.push, "<cmd>Neogit push<cr>", desc = "Push" },
                 { "<leader>" .. keymap.git .. keymap.merge, "<cmd>Neogit merge<cr>", desc = "Merge" },
